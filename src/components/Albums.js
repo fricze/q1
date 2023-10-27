@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   useDeleteAlbumMutation,
   useGetAlbumsQuery,
-} from '../app/services/jsonServerApi';
+} from "../app/services/albumsApi";
 
 export default function Albums(props) {
   const { setSelectedAlbum } = props;
@@ -15,6 +15,11 @@ export default function Albums(props) {
     isError,
     error,
   } = useGetAlbumsQuery(page);
+
+  const value = 4 |> % + 4;
+  console.log(value);
+
+  const x = 4 ?? 4;
 
   const [deleteAlbum] = useDeleteAlbumMutation();
 
@@ -32,8 +37,8 @@ export default function Albums(props) {
       <ul>
         {albums.map((album) => (
           <li key={album.id}>
-            {album.id} - {album.title}{' '}
-            <button onClick={() => setSelectedAlbum(album)}>edit</button>{' '}
+            {album.id} - {album.title}{" "}
+            <button onClick={() => setSelectedAlbum(album)}>edit</button>{" "}
             <button onClick={() => deleteAlbum(album.id)}>delete</button>
           </li>
         ))}

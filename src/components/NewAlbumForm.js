@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateAlbumMutation } from '../app/services/jsonServerApi';
+import { useCreateAlbumMutation } from '../app/services/albumsApi';
 
 export default function NewAlbumForm() {
   const [createAlbum, { isLoading }] = useCreateAlbumMutation();

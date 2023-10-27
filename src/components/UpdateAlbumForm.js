@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUpdateAlbumMutation } from '../app/services/jsonServerApi';
+import { useUpdateAlbumMutation } from '../app/services/albumsApi';
 
 export default function UpdateAlbumForm(props) {
   const { selectedAlbum = null } = props;
