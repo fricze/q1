@@ -16,11 +16,6 @@ export default function Albums(props) {
     error,
   } = useGetAlbumsQuery(page);
 
-  const value = 4 |> % + 4;
-  console.log(value);
-
-  const x = 4 ?? 4;
-
   const [deleteAlbum] = useDeleteAlbumMutation();
 
   if (isLoading || isFetching) {
